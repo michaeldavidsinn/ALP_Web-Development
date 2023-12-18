@@ -53,20 +53,4 @@ class User extends Authenticatable
         }
         return false;
     }
-
-    public function isEditor() : bool{
-
-        if ($this->role_id == 2){
-            return true;
-        }
-        return false;
-    }
-
-    public function isMember() : bool{
-
-        if ($this->role_id == 3){
-            return true;
-        }
-        return false;
-    }
 }

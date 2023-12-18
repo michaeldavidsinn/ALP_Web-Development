@@ -11,10 +11,10 @@ class PageController extends Controller
 {
     public function index(Request $request)
     {
-        $pages = Page::all(); // Fetch all pages
+        $pages = Page::all();
 
-        return view('view_page', [
-            "pages" => $pages, // Correct the variable name here
+        return view('layouts.template', [
+            "pages" => $pages,
         ]);
     }
 

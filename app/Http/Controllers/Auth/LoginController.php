@@ -55,7 +55,7 @@ class LoginController extends Controller
             $this->isLogin(Auth::id());
             return redirect()->route('index');
         }
-        return redirect()->route('login');
+        return redirect()->route('index');
     }
 
     private function isLogin(int $id)

@@ -37,16 +37,7 @@
                     <input id="password-confirm" type="password" class="w-full p-2 border border-gray-300 rounded-md" name="password_confirmation" required autocomplete="new-password">
                 </div>
 
-                <div class="form-group row">
-                    <label for='role_id' class="col-md-4 col-form-label text-md-right">Role</label>
-                    <div class="col-md-6">
-                        <select name="role_id" id="role_id" class="custom-select" required>
-                            <option value="1">Admin</option>
-                            <option value="2">Editor</option>
-                            <option value="3">Member</option>
-                        </select>
-                    </div>
-                </div>
+
 
 
 

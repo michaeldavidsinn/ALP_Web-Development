@@ -44,8 +44,8 @@ Route::get('/edit_products/{products}', [ProductsController::class, 'edit'])->mi
 Route::put('/update_products/{products}', [ProductsController::class, 'update'])->middleware('auth')->name('update_products');
 Route::delete('/delete_products/{products}', [ProductsController::class, 'destroy'])->middleware('auth')->name('delete_products');
 
-Route::get('/view_page', [PageController::class, 'index'])->middleware('auth')->name('view_page');
-Route::get('/page/{page}', [PageController::class,'show']);
+Route::get('/template', [PageController::class, 'index'])->middleware('auth')->name('view_page');
+Route::get('/page/{page}', [PageController::class, 'show'])->name('page');
 
 Route::get('/view_store', [StoreController::class, 'index'])->middleware('auth')->name('view_store');
 Route::get('/store/{store}', [StoreController::class,'show']);

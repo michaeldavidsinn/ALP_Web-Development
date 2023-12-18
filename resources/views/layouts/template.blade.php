@@ -50,10 +50,12 @@
                             href="view_article">Article</a>
                     </li>
                     @if (Auth::user()->isAdmin())
-                        <li class="nav-item">
-                            <a class="text-white hover:text-blue-300 transition duration-300 ease-in-out hover:animate-pulse"
-                                href="view_page">Page</a>
-                        </li>
+                        {{-- @foreach ($pages as $page)
+                            <li class="nav-item">
+                                <a class="text-white hover:text-blue-300 transition duration-300 ease-in-out hover:animate-pulse"
+                                    href="{{ route('page', ['page' => $page->page_name]) }}">{{ $page->page_name }}</a>
+                            </li>
+                        @endforeach --}}
 
                         <li class="nav-item">
                             <a class="text-white hover:text-blue-300 transition duration-300 ease-in-out hover:animate-pulse"
