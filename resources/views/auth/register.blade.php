@@ -1,0 +1,57 @@
+@extends('layouts.template')
+
+@section('content')
+    <div class="flex items-center justify-center h-screen mt-[-10%]">
+        <div class="max-w-md mx-auto bg-white p-8 rounded-md shadow-md">
+            <h2 class="text-2xl font-semibold mb-6">Register</h2>
+
+            <form method="POST" action="{{ route('register') }}" class="space-y-4">
+                @csrf
+
+                <div>
+                    <label for="name" class="text-sm">Name</label>
+                    <input id="name" type="text" class="w-full p-2 border border-gray-300 rounded-md" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    @error('name')
+                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div>
+                    <label for="email" class="text-sm">Email Address</label>
+                    <input id="email" type="email" class="w-full p-2 border border-gray-300 rounded-md" name="email" value="{{ old('email') }}" required autocomplete="email">
+                    @error('email')
+                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div>
+                    <label for="password" class="text-sm">Password</label>
+                    <input id="password" type="password" class="w-full p-2 border border-gray-300 rounded-md" name="password" required autocomplete="new-password">
+                    @error('password')
+                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div>
+                    <label for="password-confirm" class="text-sm">Confirm Password</label>
+                    <input id="password-confirm" type="password" class="w-full p-2 border border-gray-300 rounded-md" name="password_confirmation" required autocomplete="new-password">
+                </div>
+
+                <div class="form-group row">
+                    <label for='role_id' class="col-md-4 col-form-label text-md-right">Role</label>
+                    <div class="col-md-6">
+                        <select name="role_id" id="role_id" class="custom-select" required>
+                            <option value="1">Admin</option>
+                            <option value="2">Editor</option>
+                            <option value="3">Member</option>
+                        </select>
+                    </div>
+                </div>
+
+
+
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out">Register</button>
+            </form>
+        </div>
+    </div>
+@endsection
