@@ -5,9 +5,9 @@
     <div class="bg-white p-6 rounded-md shadow-md">
         <h1 class="text-3xl font-bold mb-4 text-center">Brand</h1>
 
-        <form action="{{ route('create_brand')}}" method="GET" class="mb-4">
+        <form action="{{ route('admincreate_brand')}}" method="GET" class="mb-4">
             <div class="flex items-center">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded-md" href="{{ route('create_brand')}}">Create</button>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded-md" href="{{ route('admincreate_brand')}}">Create</button>
             </div>
         </form>
 
@@ -34,9 +34,9 @@
                             <td class="py-2 px-4"><a href="/brand/{{ $brands['id'] }}" class="text-blue-500 hover:underline">{{ $brands['brand_name'] }}</a></td>
                             <td class="py-2 px-4">{{ $brands['logo'] }}</td>
                             <td class="py-2 px-4">
-                                <a href="{{route('edit_brand', $brands)}}" class="text-blue-500 hover:underline">Edit</a>
+                                <a href="{{route('adminedit_brand', $brands)}}" class="text-blue-500 hover:underline">Edit</a>
 
-                                <form action="{{route('delete_brand', $brands)}}" method="POST" class="inline">
+                                <form action="{{route('admindelete_brand', $brands)}}" method="POST" class="inline">
                                     @method('delete')
                                     @csrf
                                     <button type="submit" class="text-red-500 hover:underline">Delete</button>

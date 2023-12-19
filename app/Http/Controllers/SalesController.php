@@ -53,7 +53,7 @@ class SalesController extends Controller
             'sales_contact' => $validatedData['sales_contact']
         ]);
 
-        return redirect()->route('view_store');
+        return redirect()->route('adminview_sales');
     }
 
     public function edit(Sales $sales)
@@ -71,13 +71,13 @@ class SalesController extends Controller
         'sales_contact' => $request->sales_contact
     ]);
 
-    return redirect()->route('view_sales');
+    return redirect()->route('adminview_sales');
    }
 
    public function destroy(Sales $sales){
 
     $sales->delete();
 
-    return redirect()->route('view_sales');
+    return redirect()->route('adminview_sales');
    }
 }

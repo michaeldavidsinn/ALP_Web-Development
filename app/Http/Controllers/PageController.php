@@ -13,7 +13,7 @@ class PageController extends Controller
     {
         $pages = Page::all();
 
-        return view('layouts.template', [
+        return view('view_page', [
             "pages" => $pages,
         ]);
     }

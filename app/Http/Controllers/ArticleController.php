@@ -52,7 +52,7 @@ class ArticleController extends Controller
             'image' => $validatedData['image'],
         ]);
 
-        return redirect()->route('view_article');
+        return redirect()->route('adminview_article');
     }
 
     public function edit(Article $article)
@@ -70,13 +70,13 @@ class ArticleController extends Controller
             'image' => $request->image,
         ]);
 
-        return redirect()->route('view_article');
+        return redirect()->route('adminview_article');
     }
 
     public function destroy(Article $article)
     {
         $article->delete();
 
-        return redirect()->route('view_article');
+        return redirect()->route('adminview_article');
     }
 }

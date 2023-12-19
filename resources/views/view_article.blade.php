@@ -5,9 +5,9 @@
     <div class="bg-white p-6 rounded-md shadow-md">
         <h1 class="text-3xl font-bold mb-4 text-center">Article</h1>
 
-        <form action="{{ route('create_article') }}" method="GET" class="mb-4">
+        <form action="{{ route('admincreate_article') }}" method="GET" class="mb-4">
             <div class="flex items-center">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded-md" href="{{ route('create_article')}}">Create</button>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded-md" href="{{ route('admincreate_article')}}">Create</button>
             </div>
         </form>
 
@@ -28,9 +28,9 @@
                         <p class="text-gray-700">{{ $articles['content'] }}</p>
 
                         <div class="mt-2">
-                            <a href="{{ route('edit_article', $articles) }}" class="text-blue-500 hover:underline">Edit</a>
+                            <a href="{{ route('adminedit_article', $articles) }}" class="text-blue-500 hover:underline">Edit</a>
 
-                            <form action="{{ route('delete_article', $articles) }}" method="POST" class="inline">
+                            <form action="{{ route('admindelete_article', $articles) }}" method="POST" class="inline">
                                 @method('delete')
                                 @csrf
                                 <button type="submit" class="text-red-500 hover:underline">Delete</button>

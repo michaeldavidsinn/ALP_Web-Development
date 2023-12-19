@@ -7,7 +7,7 @@
             <div class="max-w-md mx-auto bg-white p-8 rounded-md shadow-md">
                 <h2 class="text-2xl font-semibold mb-6">Add Products</h2>
 
-                <form action="{{ route('store_products') }}" method="POST">
+                <form action="{{ route('adminstore_products') }}" method="POST">
 
                     @csrf
                     <div class="mb-3">

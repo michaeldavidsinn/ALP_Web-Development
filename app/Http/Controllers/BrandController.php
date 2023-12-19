@@ -55,14 +55,14 @@ class BrandController extends Controller
             'logo' => $validatedData['logo']
         ]);
 
-        return redirect()->route('view_brand');
+        return redirect()->route('adminview_brand');
     }
 
     public function edit(Brand $brand)
 {
     $brandEdit = Brand::where('id', $brand->id)->first();
 
-    return view('edit_brand', compact('brand'));
+    return view('edit_brand', compact('brandEdit'));
 }
 
    public function update(Request $request, Brand $brand)
@@ -72,13 +72,13 @@ class BrandController extends Controller
         'brand_name' => $request->brand_name
     ]);
 
-    return redirect()->route('view_brand');
+    return redirect()->route('adminview_brand');
    }
 
    public function destroy(Brand $brand){
 
     $brand->delete();
 
-    return redirect()->route('view_brand');
+    return redirect()->route('adminview_brand');
    }
 }

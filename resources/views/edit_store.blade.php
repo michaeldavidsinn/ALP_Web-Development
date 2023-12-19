@@ -7,7 +7,7 @@
             <div class="max-w-md mx-auto bg-white p-8 rounded-md shadow-md">
                 <h2 class="text-2xl font-semibold mb-6">Update Store</h2>
 
-                <form action="{{ route('update_store', $storeEdit) }}" method="POST">
+                <form action="{{ route('adminupdate_store', $storeEdit) }}" method="POST">
 
                     @method('put')
                     @csrf

@@ -5,9 +5,9 @@
     <div class="bg-white p-6 rounded-md shadow-md">
         <h1 class="text-3xl font-bold mb-4 text-center">Categories</h1>
 
-        <form action="{{ route('create_category')}}" method="GET" class="mb-4">
+        <form action="{{ route('admincreate_category')}}" method="GET" class="mb-4">
             <div class="flex items-center justify-center">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded-md" href="{{ route('create_category')}}">Create</button>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded-md" href="{{ route('admincreate_category')}}">Create</button>
             </div>
         </form>
 
@@ -26,9 +26,9 @@
                             <a href="/category/{{ $categories['id'] }}" class="text-blue-500 hover:underline">{{ $categories['categories_name'] }}</a>
                         </h2>
                         <div class="flex justify-between mt-2">
-                            <a href="{{route('edit_category', $categories)}}" class="text-blue-500 hover:underline">Edit</a>
+                            <a href="{{route('adminedit_category', $categories)}}" class="text-blue-500 hover:underline">Edit</a>
 
-                            <form action="{{route('delete_category', $categories)}}" method="POST" class="inline">
+                            <form action="{{route('admindelete_category', $categories)}}" method="POST" class="inline">
                                 @method('delete')
                                 @csrf
                                 <button type="submit" class="text-red-500 hover:underline">Delete</button>

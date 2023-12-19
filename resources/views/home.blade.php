@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <p class="text-gray-700">{{ __('You are logged in!') }}</p>
+                    <p class="text-gray-700">{{ __('Welcome') }}</p>
                 </div>
             </div>
         </div>

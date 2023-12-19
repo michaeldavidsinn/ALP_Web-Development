@@ -49,8 +49,8 @@ class ProductsController extends Controller
             'name' => 'required',
             'descriptions' => 'required',
             'photo' => 'required',
-            'brand_id' => 'required', // Add this line to validate brand_id
-            'category_id' => 'required' // Add this line to validate category_id
+            'brand_id' => 'required',
+            'category_id' => 'required'
         ]);
 
         Products::create([
@@ -58,10 +58,10 @@ class ProductsController extends Controller
             'descriptions' => $validatedData['descriptions'],
             'photo' => $validatedData['photo'],
             'brand_id' => $validatedData['brand_id'],
-            'category_id' => $validatedData['category_id']// Include brand_id in the creation process
+            'category_id' => $validatedData['category_id']
         ]);
 
-        return redirect()->route('view_products');
+        return redirect()->route('adminview_products');
     }
 
     public function edit(Products $products)
@@ -85,13 +85,13 @@ class ProductsController extends Controller
         'category_id' => $request->category_id
     ]);
 
-    return redirect()->route('view_products');
+    return redirect()->route('adminview_products');
    }
 
    public function destroy(Products $products){
 
     $products->delete();
 
-    return redirect()->route('view_products');
+    return redirect()->route('adminview_products');
    }
 }

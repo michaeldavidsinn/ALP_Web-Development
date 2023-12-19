@@ -45,30 +45,14 @@ class GalleryController extends Controller
             'gallery_url' => $validatedData[ 'gallery_url']
         ]);
 
-        return redirect()->route('view_gallery');
+        return redirect()->route('adminview_gallery');
     }
 
-    public function edit(Gallery $gallery)
-{
-    $galleryEdit = Gallery::where('id', $gallery->id)->first();
-
-    return view('edit_gallery', compact('gallery'));
-}
-
-   public function update(Request $request, Gallery $gallery)
-   {
-
-    $gallery->update([
-        'gallery_url' => $request->gallery_url
-    ]);
-
-    return redirect()->route('view_gallery');
-   }
 
    public function destroy(Gallery $gallery){
 
     $gallery->delete();
 
-    return redirect()->route('view_gallery');
+    return redirect()->route('adminview_gallery');
    }
 }

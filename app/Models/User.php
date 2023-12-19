@@ -46,11 +46,15 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function isAdmin() : bool{
+    public function isAdmin(): bool
+    {
 
-        if ($this->role_id == 1){
-            return true;
-        }
-        return false;
+        return $this->role_id == 1 && $this->is_login == 1 && $this->is_active == 1;
+    }
+
+    public function isVisitor(): bool
+    {
+
+        return  $this->is_login == 0 && $this->is_active == 0;
     }
 }

@@ -44,38 +44,38 @@ class CategoryController extends Controller
 
 
         $validatedData = $request->validate([
-            'category_name' => 'required'
+            'categories_name' => 'required'
         ]);
 
         Category::create([
 
-            'category_name' => $validatedData['category_name']
+            'categories_name' => $validatedData['categories_name']
         ]);
 
-        return redirect()->route('view_category');
+        return redirect()->route('adminview_category');
     }
 
     public function edit(Category $category)
 {
     $categoryEdit = Category::where('id', $category->id)->first();
 
-    return view('edit_category', compact('category'));
+    return view('edit_category', compact('categoryEdit'));
 }
 
    public function update(Request $request, Category $category)
    {
 
     $category->update([
-        'category_name' => $request->category_name
+        'categories_name' => $request->categories_name
     ]);
 
-    return redirect()->route('view_category');
+    return redirect()->route('adminview_category');
    }
 
    public function destroy(Category $category){
 
     $category->delete();
 
-    return redirect()->route('view_category');
+    return redirect()->route('adminview_category');
    }
 }

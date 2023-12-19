@@ -5,9 +5,9 @@
     <div class="bg-white p-6 rounded-md shadow-md">
         <h1 class="text-3xl font-bold mb-4 text-center">Sales</h1>
 
-        <form action="{{ route('create_sales')}}" method="GET" class="mb-4">
+        <form action="{{ route('admincreate_sales')}}" method="GET" class="mb-4">
             <div class="flex items-center">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded-md" href="{{ route('create_sales')}}">Create</button>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded-md" href="{{ route('admincreate_sales')}}">Create</button>
             </div>
         </form>
 
@@ -26,8 +26,8 @@
                     </h2>
                     <p class="text-gray-700">{{ $sale['sales_contact'] }}</p>
                     <div class="mt-2">
-                        <a href="{{ route('edit_sales', $sale) }}" class="text-blue-500 hover:underline">Edit</a>
-                        <form action="{{ route('delete_sales', $sale) }}" method="POST" class="inline">
+                        <a href="{{ route('adminedit_sales', $sale) }}" class="text-blue-500 hover:underline">Edit</a>
+                        <form action="{{ route('admindelete_sales', $sale) }}" method="POST" class="inline">
                             @method('delete')
                             @csrf
                             <button type="submit" class="text-red-500 hover:underline">Delete</button>

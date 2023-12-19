@@ -53,7 +53,7 @@ class StoreController extends Controller
             'location' => $validatedData['location']
         ]);
 
-        return redirect()->route('view_store');
+        return redirect()->route('adminview_store');
     }
 
     public function edit(Store $store)
@@ -71,13 +71,13 @@ class StoreController extends Controller
         'location' => $request->location
     ]);
 
-    return redirect()->route('view_store');
+    return redirect()->route('adminview_store');
    }
 
    public function destroy(Store $store){
 
     $store->delete();
 
-    return redirect()->route('view_store');
+    return redirect()->route('adminview_store');
    }
 }
