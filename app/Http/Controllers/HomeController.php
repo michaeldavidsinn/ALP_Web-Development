@@ -28,6 +28,6 @@ class HomeController extends Controller
 
     public function indexadmin()
     {
-        return view('auth.login');
+        return view('home');
     }
 }
