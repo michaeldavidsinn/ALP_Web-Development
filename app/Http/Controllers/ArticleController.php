@@ -16,7 +16,7 @@ class ArticleController extends Controller
                 ->paginate(5)
                 ->withQueryString();
         } else {
-            $article = Article::paginate(2);
+            $article = Article::paginate(3);
         }
 
         return view('view_article', [

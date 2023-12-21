@@ -8,6 +8,7 @@ use App\Models\Brand;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Products;
+use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {
@@ -17,7 +18,7 @@ class ProductsController extends Controller
 
             $products = Products::where('name' , 'LIKE', '%'.$request->search.'%')->paginate(5)->withQueryString();
         } else {
-            $products = Products::paginate(2);
+            $products = Products::paginate(27);
         }
 
 
@@ -48,18 +49,37 @@ class ProductsController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'descriptions' => 'required',
-            'photo' => 'required',
+            // 'photo' => 'image required|mimes:png,jpg,jpeg|max:2048',
+            'photo' => 'image',
             'brand_id' => 'required',
             'category_id' => 'required'
         ]);
 
-        Products::create([
-            'name' => $validatedData['name'],
-            'descriptions' => $validatedData['descriptions'],
-            'photo' => $validatedData['photo'],
-            'brand_id' => $validatedData['brand_id'],
-            'category_id' => $validatedData['category_id']
-        ]);
+        if($request->file('photo')){
+            $validatedData['photo'] = $request->file('photo')->store('image',['disk'=>'public']);
+
+            Products::create([
+                'name' => $validatedData['name'],
+                'descriptions' => $validatedData['descriptions'],
+                'photo' => $validatedData['photo'],
+                'brand_id' => $validatedData['brand_id'],
+                'category_id' => $validatedData['category_id']
+            ]);
+        }
+
+        // $photo = $request->file('photo');
+        // $filename = date('Y-m-d').$photo->getClientOriginalName();
+        // $path       ='image/'.$filename;
+
+        // Storage::disk('public')->put($path,file_get_contents($photo));
+
+        // Products::create([
+        //     'name' => $validatedData['name'],
+        //     'descriptions' => $validatedData['descriptions'],
+        //     'photo' => $validatedData['photo'],
+        //     'brand_id' => $validatedData['brand_id'],
+        //     'category_id' => $validatedData['category_id']
+        // ]);
 
         return redirect()->route('adminview_products');
     }
