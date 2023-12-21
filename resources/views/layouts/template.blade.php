@@ -15,7 +15,9 @@
             <div class="flex items-center space-x-4">
                 <div class="flex items-center space-x-4">
                     @guest
-                        <span class="text-blue-300 text-xl mr-4">Welcome</span>
+                    <a class="text-white hover:text-blue-300 transition duration-300 ease-in-out hover:animate-pulse"
+                    href="view_article">PT.Mandiri Langgeng Perkasa</a>
+                        {{-- <span class="text-blue-300 text-xl mr-4"  href="view_page" >Welcom</span> --}}
                     @else
                         <span class="text-blue-300 text-xl mr-4">Welcome, {{ Auth::user()->name }}</span>
                         <a class="text-white hover:text-red-500 transition duration-300 ease-in-out hover:animate-pulse"
@@ -50,16 +52,7 @@
 
                 <li class="nav-item">
                     <a class="text-white hover:text-blue-300 transition duration-300 ease-in-out hover:animate-pulse"
-                        href="view_page">Profile</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="text-white hover:text-blue-300 transition duration-300 ease-in-out hover:animate-pulse"
                         href="view_products">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a class="text-white hover:text-blue-300 transition duration-300 ease-in-out hover:animate-pulse"
-                        href="view_article">Article</a>
                 </li>
 
                 <li class="nav-item">
@@ -82,6 +75,10 @@
                 <li class="nav-item">
                     <a class="text-white hover:text-blue-300 transition duration-300 ease-in-out hover:animate-pulse"
                         href="view_gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="text-white hover:text-blue-300 transition duration-300 ease-in-out hover:animate-pulse"
+                        href="view_page">About Us</a>
                 </li>
 
             </ul>

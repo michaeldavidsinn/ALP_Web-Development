@@ -14,10 +14,8 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MentorController;
-use App\Http\Controllers\Admin\MenteeController;
-use App\Http\Controllers\Editor\MenteeController as EditorMenteeController;
-use App\Http\Controllers\Admin\SubjectController;
+use Illuminate\Support\Facades\Auth;
+
 
 
 
@@ -129,13 +127,9 @@ Route::put('/update_sales/{sales}', [SalesController::class, 'update'])->middlew
 Route::delete('/delete_sales/{sales}', [SalesController::class, 'destroy'])->middleware('auth')->name('delete_sales');
 }
 );
-
-
 Route::get('/home',[App\Http\Controllers\HomeController::class,'index']);
 Auth::routes();
-
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
 ?>
 
 
