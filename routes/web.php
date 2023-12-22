@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\HomeController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SalesController;
@@ -58,6 +59,9 @@ Route::get('/sales/{sales}', [SalesController::class,'show']);
 
 Route::get('/view_gallery', [GalleryController::class, 'index']);
 Route::get('/gallery/{gallery}', [GalleryController::class,'show']);
+
+Route::get('/view_homepage', [HomePageController::class, 'index']);
+
 
 
 Route::group([

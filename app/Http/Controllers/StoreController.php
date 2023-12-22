@@ -15,7 +15,7 @@ class StoreController extends Controller
 
             $store = Store::where('store_name' , 'LIKE', '%'.$request->search.'%')->paginate(5)->withQueryString();
         } else {
-            $store = Store::paginate(2);
+            $store = Store::paginate(4);
         }
 
 

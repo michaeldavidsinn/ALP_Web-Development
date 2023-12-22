@@ -22,7 +22,7 @@ class ArticleSeeder extends Seeder
             \n<strong>1. Memperhatikan material keramik</strong>
             Terdapat dua jenis material keramik yang umum digunakan, yaitu keramik berglazur dan ubin porselen atau homogenous tile. Keramik berglazur memiliki permukaan yang halus dan mengkilap, sedangkan ubin porselen memiliki permukaan yang lebih kasar dan tidak mudah tergores.
             Keramik berglazur lebih cocok untuk digunakan di ruangan dengan intensitas aktivitas yang rendah, seperti ruang keluarga atau kamar tidur. Sedangkan ubin porselen lebih cocok untuk digunakan di ruangan dengan intensitas aktivitas yang tinggi, seperti kamar mandi atau dapur.
-            \nstrong>2. Memilih warna dan motif keramik</strong>
+            \n<strong>2. Memilih warna dan motif keramik</strong>
             Warna dan motif keramik dapat mempengaruhi tampilan ruangan. Warna-warna cerah dapat membuat ruangan terlihat lebih luas dan lapang, sedangkan warna-warna gelap dapat membuat ruangan terlihat lebih elegan dan mewah.
             Motif keramik juga dapat memberikan kesan yang berbeda-beda. Motif geometris dapat memberikan kesan modern dan minimalis, sedangkan motif floral dapat memberikan kesan klasik dan elegan.
             \n<strong>3. Memilih ukuran keramik</strong>

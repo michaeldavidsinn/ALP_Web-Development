@@ -24,7 +24,7 @@
             <div class="flex items-center space-x-4">
                 <div class="flex items-center space-x-4">
                     @guest
-                    <a href="view_article" class="flex items-center">
+                    <a href="view_homepage" class="flex items-center">
                     {{-- href="view_article">PT.Mandiri Langgeng Perkasa</a> --}}
                     <img src="{{ asset('image/LogoPTMandiriLanggengPerkasa.png') }}" class="h-8 mr-3" alt="Company Logo" />
                     <span style="font-family: 'Poppins'" class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white" >PT.Mandiri Langgeng Perkasa</span>
@@ -73,14 +73,14 @@
                         href="view_sales">Sales</a>
                 </li>
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="text-white hover:text-blue-300 transition duration-300 ease-in-out hover:animate-pulse"
                         href="view_brand">Brand</a>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                     <a class="text-white hover:text-blue-300 transition duration-300 ease-in-out hover:animate-pulse"
                         href="view_category">Category</a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="text-white hover:text-blue-300 transition duration-300 ease-in-out hover:animate-pulse"
                         href="view_gallery">Gallery</a>

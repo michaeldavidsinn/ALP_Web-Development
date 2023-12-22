@@ -15,7 +15,7 @@ class CategoryController extends Controller
 
             $category = Category::where('categories_name' , 'LIKE', '%'.$request->search.'%')->paginate(5)->withQueryString();
         } else {
-            $category = Category::paginate(2);
+            $category = Category::paginate(3);
         }
 
 

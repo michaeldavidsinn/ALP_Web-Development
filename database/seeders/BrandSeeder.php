@@ -16,19 +16,19 @@ class BrandSeeder extends Seeder
         DB::table('brands')->insert([
 
             'brand_name' => "KIA",
-            'logo' => "logo1kia"
+            'logo' => "image/KIA KERAMIK.png"
         ]);
 
         DB::table('brands')->insert([
 
             'brand_name' => "Prime",
-            'logo' => "logo2prime"
+            'logo' => "image/PRIME.png"
         ]);
 
         DB::table('brands')->insert([
 
             'brand_name' => "TOTO",
-            'logo' => "logo3toto"
+            'logo' => "image/TOTO.png"
         ]);
     }
 }

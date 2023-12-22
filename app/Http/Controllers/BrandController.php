@@ -16,7 +16,7 @@ class BrandController extends Controller
 
             $brand = Brand::where('brand_name' , 'LIKE', '%'.$request->search.'%')->paginate(5)->withQueryString();
         } else {
-            $brand = Brand::paginate(2);
+            $brand = Brand::paginate(3);
         }
 
 

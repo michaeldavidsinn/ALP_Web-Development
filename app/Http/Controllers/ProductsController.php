@@ -18,7 +18,7 @@ class ProductsController extends Controller
 
             $products = Products::where('name' , 'LIKE', '%'.$request->search.'%')->paginate(5)->withQueryString();
         } else {
-            $products = Products::paginate(27);
+            $products = Products::paginate(24);
         }
 
 
