@@ -4,7 +4,7 @@
     <div class="container mx-auto mt-8 mb-8">
         <div >
             <div class="bg-white p-6 rounded-md shadow-md">
-            <h1 class="text-3xl font-bold mb-4 text-center">Products</h1>
+            <h1 class="text-3xl font-bold mb-4 text-center">Our Product</h1>
 
             <form action="/view_products" method="GET" class="mb-4">
                 <div class="flex items-center justify-center space-x-4 ">
@@ -27,6 +27,7 @@
                                 <a href="/products/{{ $product['id'] }}"
                                     class="text-blue-500 hover:underline">{!! nl2br($product['name']) !!}</a>
                             </h2>
+                            <h3 class="text-xl mb-2 line-clamp-2">{!! nl2br($product['descriptions']) !!}</h3>
                             <div class="flex justify-between mt-2">
                                 <a href="{{ route('adminedit_products', $product) }}"
                                     class="text-white hover:underline opacity-10">Edit</a>
