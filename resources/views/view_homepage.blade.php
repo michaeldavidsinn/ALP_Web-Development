@@ -62,13 +62,15 @@
                 <div class="container mx-auto mt-8">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         @foreach ($dataArticle as $dataArticles)
-                            <div class="bg-white p-6 rounded-md shadow-md ">
+                        <div class="bg-white p-6 rounded-md shadow-md flex flex-col justify-between">
+                            <div>
                                 <img src="{{ asset('storage/' . $dataArticles->image) }}" alt=""
                                     class="w-auto h-auto object-cover rounded-lg mx-auto mt-2 mb-8">
                                 <h2 class="text-xl font-bold mb-2 text-center">
                                     <a href="/view_article"
                                         class="text-blue-500 hover:underline ">{!! nl2br($dataArticles['title']) !!}</a>
                                 </h2>
+                            </div>
                                 <div class="flex items-center justify-center my-8"> <!-- Menambah kelas items-center -->
                                     <a class="bg-blue-100 text-blue-500 px-4 py-2 rounded-md" href="/view_article">See
                                         More</a>
