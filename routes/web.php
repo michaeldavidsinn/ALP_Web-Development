@@ -61,6 +61,8 @@ Route::get('/view_gallery', [GalleryController::class, 'index']);
 Route::get('/gallery/{gallery}', [GalleryController::class,'show']);
 
 Route::get('/view_homepage', [HomePageController::class, 'index']);
+Route::get('/view_aboutus', [AboutUsController::class, 'index']);
+
 
 
 

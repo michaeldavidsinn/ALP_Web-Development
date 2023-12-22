@@ -38,16 +38,18 @@ class PageController extends Controller
 
 
         $validatedData = $request->validate([
-            'page_name' => 'required',
-            'main_image' => 'required',
-            'content' => 'required'
+            'alamat' => 'required',
+            'nomor_telepon' => 'required',
+            'email' => 'required',
+            'jam_operasional' => 'required'
         ]);
 
         Page::create([
 
-            'page_name' => $validatedData['page_name'],
-            'main_image' => $validatedData['main_image'],
-            'content' => $validatedData['content']
+            'alamat' => $validatedData['alamat'],
+            'nomor_telepon' => $validatedData['nomor_telepon'],
+            'email' => $validatedData['email'],
+            'jam_operasional' => $validatedData['jam_operasional']
         ]);
 
         return redirect()->route('view_page');
@@ -64,9 +66,10 @@ class PageController extends Controller
     {
 
         $page->update([
-            'page_name' => $request->page_name,
-            'main_image' => $request->main_image,
-            'content' => $request->content
+            'alamat' => $request->alamat,
+            'nomor_telepon' => $request->nomor_telepon,
+            'email' => $request->email,
+            'jam_operasional' => $request->jam_operasional
         ]);
 
         return redirect()->route('view_page');

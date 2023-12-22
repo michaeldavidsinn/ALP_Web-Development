@@ -19,7 +19,7 @@ class AboutUsController extends Controller
       $dataSales = Sales::all();
       $dataStore = Store::all();
 
-      return view('view_homepage', [
+      return view('view_aboutus', [
           'dataPage' => $dataPage,
           'dataSales' => $dataSales,
           'dataStore' => $dataStore,

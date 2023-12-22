@@ -2,19 +2,18 @@
 
 @section('content')
     <div class="container mx-auto mt-8 mb-8">
-        <div class="bg-white p-6 rounded-md shadow-md">
+        <div >
+            <div class="bg-white p-6 rounded-md shadow-md">
             <h1 class="text-3xl font-bold mb-4 text-center">Products</h1>
 
-
-
-
             <form action="/view_products" method="GET" class="mb-4">
-                <div class="flex items-center space-x-4">
+                <div class="flex items-center justify-center space-x-4 ">
                     <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Search</button>
                     <input class="form-input mr-2 focus:outline-none border-b-0 rounded-t-md" type="search" name="search"
                         placeholder="Search" aria-label="Search">
                 </div>
             </form>
+        </div>
 
             <div class="container mx-auto mt-8 ">
                 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">

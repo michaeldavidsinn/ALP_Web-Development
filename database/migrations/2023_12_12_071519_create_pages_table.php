@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->text('page_name')->nullable(false);
-            $table->text('main_image')->nullable(false);
-            $table->text('content')->nullable(false);
+            $table->text('alamat')->nullable(false);
+            $table->text('nomor_telepon')->nullable(false);
+            $table->text('email')->nullable(false);
+            $table->text('jam_operasional')->nullable(false);
+
         });
     }
 

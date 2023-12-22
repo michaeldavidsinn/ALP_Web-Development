@@ -16,16 +16,11 @@ class PageSeeder extends Seeder
     {
         DB::table('pages')->insert([
 
-            'page_name' => "About",
-            'main_image' => "PageGambar1",
-            'content' => "About apaan",
-        ]);
+            'alamat' => "Jln. Ruhui rahayu no 88,Balikpapan, Kalimantan Timur.",
+            'nomor_telepon' => "08125428037",
+            'email' => "valma_terena@yahoo.com",
+            'jam_operasional' => "09:00-17:00",
 
-        DB::table('pages')->insert([
-
-            'page_name' => "Contact",
-            'main_image' => "PageGambar2",
-            'content' => "About apaan",
         ]);
     }
 }
