@@ -6,6 +6,7 @@ use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -45,8 +46,8 @@ class ArticleController extends Controller
             'content' => 'required',
             'image' => 'image',
         ]);
-        if($request->file('image')){
-            $validatedData['image'] = $request->file('image')->store('image',['disk'=>'public']);
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('image', ['disk' => 'public']);
 
             Article::create([
                 'title' => $validatedData['title'],
@@ -66,17 +67,35 @@ class ArticleController extends Controller
 
     public function update(Request $request, Article $article)
     {
-        $article->update([
-            'title' => $request->title,
-            'content' => $request->content,
-            'image' => $request->image,
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'image' => 'image',
         ]);
 
+        if ($request->file('image')) {
+            if($article->image){
+                Storage::disk('public')->delete($article->image);
+            }
+            $validatedData['image'] = $request->file('image')->store('image', ['disk' => 'public']);
+
+            $article->update([
+                'title' => $validatedData['title'],
+                'content' => $validatedData['content'],
+                'image' => $validatedData['image'],
+            ]);
+        }
         return redirect()->route('adminview_article');
     }
 
     public function destroy(Article $article)
     {
+        if($article->image){
+            if( Storage::disk('public')->exists($article->image)){
+                Storage::disk('public')->delete($article->image);
+            }
+
+        }
         $article->delete();
 
         return redirect()->route('adminview_article');

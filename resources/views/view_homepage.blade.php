@@ -13,8 +13,10 @@
                     <h1 class=" text-white font-bold sm:text-base md:text-xl lg:text-3xl">Kunjungi Kami</h1>
                     <h1 class=" text-white font-bold sm:text-base md:text-xl lg:text-3xl">PT.Mandiri Langgeng Perkasa</h1>
                     <h1 class=" text-white text-sm md:text-lg lg:text-2xl">Jln. Ruhui rahayu no 88 b</h1>
-                    <h1 class=" text-white text-sm md:text-lg lg:text-2xl">Bergerak di bidang distribusi keramik dan sanitaire</h1>
-                    <h1 class=" text-white text-sm md:text-lg lg:text-2xl">Sebagai Distributor ceramic tile granit tile dan sanitaire merek KIA untuk wilayah kalimantan timur</h1>
+                    <h1 class=" text-white text-sm md:text-lg lg:text-2xl">Bergerak di bidang distribusi keramik dan
+                        sanitaire</h1>
+                    <h1 class=" text-white text-sm md:text-lg lg:text-2xl">Sebagai Distributor ceramic tile granit tile dan
+                        sanitaire merek KIA untuk wilayah kalimantan timur</h1>
                 </div>
                 {{-- <form action="/view_article" method="GET" class="mb-4">
             <div class="flex items-center space-x-4">
@@ -62,15 +64,15 @@
                 <div class="container mx-auto mt-8">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         @foreach ($dataArticle as $dataArticles)
-                        <div class="bg-white p-6 rounded-md shadow-md flex flex-col justify-between">
-                            <div>
-                                <img src="{{ asset('storage/' . $dataArticles->image) }}" alt=""
-                                    class="w-auto h-auto object-cover rounded-lg mx-auto mt-2 mb-8">
-                                <h2 class="text-xl font-bold mb-2 text-center">
-                                    <a href="/view_article"
-                                        class="text-blue-500 hover:underline ">{!! nl2br($dataArticles['title']) !!}</a>
-                                </h2>
-                            </div>
+                            <div class="bg-white p-6 rounded-md shadow-md flex flex-col justify-between">
+                                <div>
+                                    <img src="{{ asset('storage/' . $dataArticles->image) }}" alt=""
+                                        class="w-auto h-auto object-cover rounded-lg mx-auto mt-2 mb-8">
+                                    <h2 class="text-xl font-bold mb-2 text-center">
+                                        <a href="/view_article"
+                                            class="text-blue-500 hover:underline ">{!! nl2br($dataArticles['title']) !!}</a>
+                                    </h2>
+                                </div>
                                 <div class="flex items-center justify-center my-8"> <!-- Menambah kelas items-center -->
                                     <a class="bg-blue-100 text-blue-500 px-4 py-2 rounded-md" href="/view_article">See
                                         More</a>

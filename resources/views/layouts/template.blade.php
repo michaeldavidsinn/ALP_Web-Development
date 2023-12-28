@@ -32,7 +32,11 @@
                                     Langgeng Perkasa</span></a>
                             {{-- <span class="text-blue-300 text-xl mr-4"  href="view_page" >Welcom</span> --}}
                         @else
-                            <span class="text-blue-300 text-xl mr-4">Welcome, {{ Auth::user()->name }}</span>
+                            <a href="/admin"  class="flex items-center">
+                                <img src="{{ asset('image/LogoPTMandiriLanggengPerkasa.png') }}"
+                                    class="h-8 mr-3" alt="Company Logo">
+                                    <span class="text-blue-300 text-xl mr-4">Welcome,
+                                    {{ Auth::user()->name }}</span></a>
                             <a class="text-white hover:text-red-500 transition duration-300 ease-in-out hover:animate-pulse"
                                 href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
@@ -113,22 +117,21 @@
         </nav>
         <script>
             // Toggle mobile menu visibility
-            document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            document.getElementById('mobile-menu-button').addEventListener('click', function() {
                 document.getElementById('mobile-menu').classList.toggle('hidden');
             });
         </script>
     </header>
-    {{-- <div class="container mx-auto mt-5"> --}}
     @yield('content')
-    {{-- </div> --}}
     <footer class="bg-white dark:bg-gray-900">
         <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
-                    <a href="https://flowbite.com/" class="flex items-center">
+                    <a href="view_homepage" class="flex items-center">
                         <img src="{{ asset('image/LogoPTMandiriLanggengPerkasa.png') }}" class="h-8 mr-3"
                             alt="Company Logo" />
-                        <span class="self-center font-semibold whitespace-nowrap dark:text-white sm:text-base md:text-2xl lg:text-2xl">PT.Mandiri
+                        <span
+                            class="self-center font-semibold whitespace-nowrap dark:text-white sm:text-base md:text-2xl lg:text-2xl">PT.Mandiri
                             Langgeng Perkasa</span>
                     </a>
                 </div>
