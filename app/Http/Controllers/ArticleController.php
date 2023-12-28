@@ -43,15 +43,17 @@ class ArticleController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'image' => 'required',
+            'image' => 'image',
         ]);
+        if($request->file('image')){
+            $validatedData['image'] = $request->file('image')->store('image',['disk'=>'public']);
 
-        Article::create([
-            'title' => $validatedData['title'],
-            'content' => $validatedData['content'],
-            'image' => $validatedData['image'],
-        ]);
-
+            Article::create([
+                'title' => $validatedData['title'],
+                'content' => $validatedData['content'],
+                'image' => $validatedData['image'],
+            ]);
+        }
         return redirect()->route('adminview_article');
     }
 

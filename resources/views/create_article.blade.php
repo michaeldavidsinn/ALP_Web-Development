@@ -7,7 +7,7 @@
             <div class="max-w-md mx-auto bg-white p-8 rounded-md shadow-md">
                 <h2 class="text-2xl font-semibold mb-6">Add Article</h2>
 
-                <form action="{{ route('adminstore_article') }}" method="POST">
+                <form action="{{ route('adminstore_article') }}" method="POST" enctype="multipart/form-data">
 
                     @csrf
                     <div class="mb-3">
@@ -20,10 +20,15 @@
                         <input type="text" class="w-full p-2 border border-gray-300 rounded-md" id="content"
                             name="content" placeholder="Article Content">
                     </div>
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label for="image" class="text-sm">Image</label>
                         <input type="text" class="w-full p-2 border border-gray-300 rounded-md" id="image"
                             name="image" placeholder="Article Image" required>
+                    </div> --}}
+                    <div class="mb-3">
+                        <label for="image" class="text-sm">Image</label>
+                        <input type="file" class="w-full p-2 border border-gray-300 rounded-md" id="image"
+                            name="Image" accept="image/jpg, image/png, image/jpeg" placeholder="Article Image" required>
                     </div>
 
                     <button type="submit"

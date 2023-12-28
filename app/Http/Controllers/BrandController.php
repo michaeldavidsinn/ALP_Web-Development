@@ -42,18 +42,20 @@ class BrandController extends Controller
     }
 
     public function store(Request $request){
-
-
         $validatedData = $request->validate([
             'brand_name' => 'required',
-            'logo' => 'required'
+            'logo' => 'image'
         ]);
 
-        Brand::create([
+        if($request->file('logo')){
+            $validatedData['logo'] = $request->file('logo')->store('image',['disk'=>'public']);
 
-            'brand_name' => $validatedData['brand_name'],
-            'logo' => $validatedData['logo']
-        ]);
+            Brand::create([
+
+                'brand_name' => $validatedData['brand_name'],
+                'logo' => $validatedData['logo']
+            ]);
+        }
 
         return redirect()->route('adminview_brand');
     }

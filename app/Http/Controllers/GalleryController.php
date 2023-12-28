@@ -32,19 +32,18 @@ class GalleryController extends Controller
         $gallery = Gallery::all();
         return view('create_gallery', compact('gallery'));
     }
-
     public function store(Request $request){
 
-
         $validatedData = $request->validate([
-            'gallery_url' => 'required'
+            'gallery_url' => 'image'
         ]);
+        if($request->file('gallery_url')){
+            $validatedData['gallery_url'] = $request->file('gallery_url')->store('image',['disk'=>'public']);
 
-        Gallery::create([
-
-            'gallery_url' => $validatedData[ 'gallery_url']
-        ]);
-
+            Gallery::create([
+                'gallery_url' => $validatedData[ 'gallery_url']
+            ]);
+        }
         return redirect()->route('adminview_gallery');
     }
 

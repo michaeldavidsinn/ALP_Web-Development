@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Brand;
 use App\Models\Category;
+use Illuminate\View\Factory;
 
 class HomePageController extends Controller
 {
@@ -23,7 +24,6 @@ class HomePageController extends Controller
             'dataArticle' => $dataArticle,
             'dataBrand' => $dataBrand,
             'dataCategory' => $dataCategory,
-            // Tambahkan data dari tabel lainnya jika diperlukan
         ]);
     }
 
