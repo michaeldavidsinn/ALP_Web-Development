@@ -31,10 +31,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
+Route::get('/', [HomePageController::class, 'index']);
 
 Route::get('/view_products', [ProductsController::class, 'index']);
 Route::get('/products/{products}', [ProductsController::class, 'show']);
@@ -73,13 +74,11 @@ Route::group([
     'as' => 'admin'
 ], function () {
 
-    Route::get('/', function () {
-        return view('index');
-    })->middleware('auth')->name('index_admin');
+    // Route::get('/', function () {
+    //     return view('index');
+    // })->middleware('auth')->name('index_admin');
 
-    Route::get('/', [App\Http\Controllers\HomeController::class, 'indexadmin'])->middleware('auth')->name('index_admin');
-
-    Route::get('/view_homepage', [HomePageController::class, 'index']);
+    Route::get('/', [HomePageController::class, 'index'])->middleware('auth')->name('index_admin');
 
     Route::get('/view_products', [ProductsController::class, 'index'])->middleware('auth')->name('view_products');
     Route::get('/create_products', [ProductsController::class, 'create'])->middleware('auth')->name('create_products');
