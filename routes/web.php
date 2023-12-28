@@ -31,9 +31,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
+
 
 Route::get('/', [HomePageController::class, 'index']);
 
@@ -74,9 +72,6 @@ Route::group([
     'as' => 'admin'
 ], function () {
 
-    // Route::get('/', function () {
-    //     return view('index');
-    // })->middleware('auth')->name('index_admin');
 
     Route::get('/', [HomePageController::class, 'index'])->middleware('auth')->name('index_admin');
 
