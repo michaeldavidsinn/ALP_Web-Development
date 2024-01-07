@@ -1,7 +1,10 @@
 @extends('layouts.template')
 
 @section('content')
-    <div class="container mx-auto mt-8 mb-8">
+<div
+style="background-image: url('{{ asset('image/HomePagePhoto.png') }}'); background-size: cover; background-position: center; width: 100%; height: 100%;">
+
+    <div class="container mx-auto py-8">
         <div class="bg-white p-6 rounded-md shadow-md">
             <div class="flex items-center justify-between mb-4">
                 <img src="{{ asset('storage/' . $gallery->gallery_url) }}" alt=""class="w-max-auto h-auto object-cover rounded-lg mx-auto mt-8 mb-8">
@@ -11,4 +14,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection

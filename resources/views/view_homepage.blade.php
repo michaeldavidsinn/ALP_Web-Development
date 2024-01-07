@@ -67,7 +67,7 @@
                             <div class="bg-white p-6 rounded-md shadow-md flex flex-col justify-between">
                                 <div>
                                     <img src="{{ asset('storage/' . $dataArticles->image) }}" alt=""
-                                        class="w-auto h-auto object-cover rounded-lg mx-auto mt-2 mb-8">
+                                        class="w-full h-35 object-cover rounded-lg mx-auto mt-2 mb-8">
                                     <h2 class="text-xl font-bold mb-2 text-center">
                                         <a href="/view_article"
                                             class="text-blue-500 hover:underline ">{!! nl2br($dataArticles['title']) !!}</a>

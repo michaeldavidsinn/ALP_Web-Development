@@ -17,7 +17,8 @@
     </style>
 </head>
 
-<body class="bg-blue-100">
+{{-- <body class="bg-blue-100"> --}}
+    <body class="bg-white">
     <header>
         <nav class="bg-white border-gray-200 dark:bg-blue-900">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
